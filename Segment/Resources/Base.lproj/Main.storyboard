@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L8M-me-M4R">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Segment Root-->
+        <scene sceneID="gon-IS-jj9">
+            <objects>
+                <tableViewController id="hCw-dY-v3j" customClass="SegmentRootController" customModule="Segment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jsn-Jc-IwS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uqY-L3-gG4">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uqY-L3-gG4" id="1VB-lj-a3N">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hCw-dY-v3j" id="ytG-nG-DaO"/>
+                            <outlet property="delegate" destination="hCw-dY-v3j" id="jJ1-Nb-k6N"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Segment Root" id="QCz-YR-srS"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tvExamples" destination="jsn-Jc-IwS" id="dzX-eN-zXU"/>
+                        <segue destination="dLe-JF-GIp" kind="show" identifier="hairSegment" id="l4c-pV-pbj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0aV-qt-ao7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.60000000000002" y="78.710644677661179"/>
+        </scene>
+        <!--Hair Segment-->
+        <scene sceneID="f2e-u1-5Ts">
+            <objects>
+                <viewController title="Hair Segment" id="dLe-JF-GIp" customClass="HairSegmentController" customModule="Segment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFx-IK-3kP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="子瑜" translatesAutoresizingMaskIntoConstraints="NO" id="3IM-Gy-tbg">
+                                <rect key="frame" x="30" y="94" width="354" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3IM-Gy-tbg" secondAttribute="height" multiplier="120:139" id="cTH-Wg-3dy"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-jR-tdR">
+                                <rect key="frame" x="161" y="534" width="92" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Hair segment">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="hairSegment:" destination="dLe-JF-GIp" eventType="touchUpInside" id="BWg-pl-fy9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mqk-jR-tdR" firstAttribute="centerX" secondItem="3IM-Gy-tbg" secondAttribute="centerX" id="4g5-Bo-TM3"/>
+                            <constraint firstItem="3IM-Gy-tbg" firstAttribute="leading" secondItem="5XA-fn-GW3" secondAttribute="leading" constant="30" id="ArE-Zs-OuG"/>
+                            <constraint firstItem="mqk-jR-tdR" firstAttribute="top" secondItem="3IM-Gy-tbg" secondAttribute="bottom" constant="30" id="JlY-GK-Wfc"/>
+                            <constraint firstItem="3IM-Gy-tbg" firstAttribute="top" secondItem="5XA-fn-GW3" secondAttribute="top" constant="30" id="UxK-8g-SDF"/>
+                            <constraint firstItem="5XA-fn-GW3" firstAttribute="trailing" secondItem="3IM-Gy-tbg" secondAttribute="trailing" constant="30" id="aBI-RJ-dDR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5XA-fn-GW3"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Hair Segment" id="CDe-oa-vJy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="rIP-h8-rlc">
+                            <connections>
+                                <action selector="selectImage" destination="dLe-JF-GIp" id="hXo-Pm-bIU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="3IM-Gy-tbg" id="i5F-rF-gbp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ft-lW-nFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221.5999999999999" y="78.710644677661179"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="m4U-gb-GcN">
+            <objects>
+                <navigationController id="L8M-me-M4R" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PxZ-RX-ofS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hCw-dY-v3j" kind="relationship" relationship="rootViewController" id="ZFk-7U-YqX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsl-2w-wPS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434" y="79"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="子瑜" width="400" height="544"/>
+    </resources>
+</document>
